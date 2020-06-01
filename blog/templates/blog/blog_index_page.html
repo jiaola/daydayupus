@@ -5,8 +5,15 @@
 
     <div class="intro">{{ page.description }}</div>
 
-    {% for post in blogpages %}
-        <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
-    {% endfor %}
+    {% with post=post.specific %}
+        {% for post in blogpages %}
+            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            {% with post.main_image as main_image %}
+                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+            {% endwith %}
+        {% endfor %}
+
+        {{ post.body|richtext }}
+    {% endwith %}
 
 {% endblock %}
