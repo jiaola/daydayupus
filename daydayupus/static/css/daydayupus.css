@@ -1,0 +1,18 @@
+body {
+    max-width: 1160px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 15px;
+    color: #231f20;
+    line-height: 1.25;
+    font-size: 1.1rem;
+}
+
+main {
+    display: block; /* For IE11 support */
+}
+
+.main {
+    padding: 20px 0;
+    margin: 0 auto;
+}
