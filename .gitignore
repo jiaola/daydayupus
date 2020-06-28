@@ -233,3 +233,5 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/macos,django,pycharm+all
+
+.env
