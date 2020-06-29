@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}template-homepage{% endblock %}
 
 {% block extra_css %}
@@ -16,6 +18,34 @@ Delete the line below if you're just getting started and want to remove the welc
 {% comment %}
 Delete the line below if you're just getting started and want to remove the welcome screen!
 {% endcomment %}
-{% include 'home/welcome_page.html' %}
+    <h1>Today's Puzzle</h1>
+    <div>
+        {% with post=today_puzzle.specific %}
+
+            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            {% with post.main_image as main_image %}
+                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+            {% endwith %}
+            {{ post.body|richtext }}
+        {% endwith %}
+    </div>
+    <div class="figure">
+        <svg class="figure-space" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true">
+          <path class="egg" fill="currentColor" d="M150 250c-42.741 0-75-32.693-75-90s42.913-110 75-110c32.088 0 75 52.693 75 110s-32.258 90-75 90z"></path>
+          <ellipse fill="#ddd" cx="150" cy="270" rx="40" ry="7"></ellipse>
+        </svg>
+    </div>
+    <h1>Answer of Yesterday's Puzzle</h1>
+    <div>
+        {% with post=yesterday_puzzle.specific %}
+
+            <h2><a href="{% pageurl post %}">{{ post.title }}</a></h2>
+            <h4>Answer</h4>
+            {% with post.main_image as main_image %}
+                {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+            {% endwith %}
+            {{ post.answer|richtext }}
+        {% endwith %}
+    </div>
 
 {% endblock content %}
