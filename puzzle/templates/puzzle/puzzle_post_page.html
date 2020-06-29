@@ -10,10 +10,12 @@
 
     {{ page.body|richtext }}
 
-    <h3>Answer</h3>
-    <a name="answer"></a>
+    {% if page.answer %}
+        <a name="answer"></a>
+        <h3>Answer</h3>
 
-    {{ page.answer|richtext }}
+        {{ page.answer|richtext }}
+    {% endif %}
 
     {% for item in page.gallery_images.all %}
         <div style="float: left; margin: 10px">
