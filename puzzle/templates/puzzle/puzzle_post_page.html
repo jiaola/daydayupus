@@ -10,7 +10,9 @@
 
     {{ page.body|richtext }}
 
-    <h4>Answer</h4>
+    <h3>Answer</h3>
+    <a name="answer"></a>
+
     {{ page.answer|richtext }}
 
     {% for item in page.gallery_images.all %}
