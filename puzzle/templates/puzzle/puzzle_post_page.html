@@ -10,6 +10,9 @@
 
     {{ page.body|richtext }}
 
+    <h4>Answer</h4>
+    {{ page.answer|richtext }}
+
     {% for item in page.gallery_images.all %}
         <div style="float: left; margin: 10px">
             {% image item.image fill-320x240 %}
