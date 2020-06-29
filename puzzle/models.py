@@ -24,6 +24,7 @@ class PuzzleIndexPage(Page):
 class PuzzlePostPage(Page):
     date = models.DateField('Post date')
     body = RichTextField(blank=True)
+    answer = RichTextField(blank=True)
 
     def main_image(self):
         gallery_item = self.gallery_images.first()
@@ -33,13 +34,14 @@ class PuzzlePostPage(Page):
             return None
 
     search_fields = Page.search_fields + [
-        index.SearchField('intro'),
         index.SearchField('body'),
+        index.SearchField('answer'),
     ]
 
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
+        FieldPanel('answer', classname='full'),
         InlinePanel('gallery_images', label='Gallery images'),
     ]
 
