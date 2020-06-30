@@ -13,7 +13,7 @@
 
     {% if page.answer %}
         <a name="answer"></a>
-        <h3>Answer <button style='font-size: 16px;' onclick="toggleAnswer()">Show / Hide</button> </h3>
+        <h3>Answer &nbsp;&nbsp;&nbsp; <button id='puzzle-answer-toggle-button' type="button" class="btn btn-outline-primary btn-sm" style='font-size: 16px;' onclick="toggleAnswer()">Hide</button> </h3>
         <br/>
         <div id="puzzle-answer">
             {{ page.answer|richtext }}
