@@ -68,5 +68,12 @@
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
         {% endblock %}
+
+        {% if not debug %}
+            {% load google_analytics_tags %}
+            <div style="display:none">
+                <img src="{% google_analytics %}" width="0" height="0" />
+            </div>
+        {% endif %}
     </body>
 </html>

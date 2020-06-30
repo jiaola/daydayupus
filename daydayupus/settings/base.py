@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'google_analytics',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages'
-            ],
+                'django.contrib.messages.context_processors.messages',
+            ]
         },
     },
 ]
@@ -164,3 +165,5 @@ WAGTAIL_SITE_NAME = "daydayupus"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+INTERNAL_IPS = ('127.0.0.1')
