@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags static %}
 
 {% block body_class %}template-puzzlepage{% endblock %}
 
@@ -9,12 +9,15 @@
     <p class="meta">{{ page.date }}</p>
 
     {{ page.body|richtext }}
+    <br/>
 
     {% if page.answer %}
         <a name="answer"></a>
-        <h3>Answer</h3>
-
-        {{ page.answer|richtext }}
+        <h3>Answer <button style='font-size: 16px;' onclick="toggleAnswer()">Show / Hide</button> </h3>
+        <br/>
+        <div id="puzzle-answer">
+            {{ page.answer|richtext }}
+        </div>
     {% endif %}
 
     {% for item in page.gallery_images.all %}
@@ -23,5 +26,7 @@
             <p>{{ item.caption }}</p>
         </div>
     {% endfor %}
+
+    <script type="text/javascript" src="{% static 'js/puzzle.js' %}"></script>
 
 {% endblock %}
