@@ -5,6 +5,8 @@ from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
+from wagtailmarkdown.edit_handlers import MarkdownPanel
+from wagtailmarkdown.fields import MarkdownField
 
 
 class PuzzleIndexPage(Page):
@@ -24,7 +26,7 @@ class PuzzleIndexPage(Page):
 class PuzzlePostPage(Page):
     date = models.DateField('Post date')
     body = RichTextField(blank=True)
-    answer = RichTextField(blank=True)
+    answer = MarkdownField(blank=True)
 
     def main_image(self):
         gallery_item = self.gallery_images.first()
@@ -41,7 +43,7 @@ class PuzzlePostPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('date'),
         FieldPanel('body', classname='full'),
-        FieldPanel('answer', classname='full'),
+        MarkdownPanel('answer'),
         InlinePanel('gallery_images', label='Gallery images'),
     ]
 

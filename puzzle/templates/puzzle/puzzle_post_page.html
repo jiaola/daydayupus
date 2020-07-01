@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load wagtailcore_tags wagtailimages_tags static %}
+{% load wagtailcore_tags wagtailimages_tags static wagtailmarkdown %}
 
 {% block body_class %}template-puzzlepage{% endblock %}
 
@@ -16,7 +16,7 @@
         <h3>Answer &nbsp;&nbsp;&nbsp; <button id='puzzle-answer-toggle-button' type="button" class="btn btn-outline-primary btn-sm" style='font-size: 16px;' onclick="toggleAnswer()">Hide</button> </h3>
         <br/>
         <div id="puzzle-answer">
-            {{ page.answer|richtext }}
+            {{ page.answer|markdown }}
         </div>
     {% endif %}
 
