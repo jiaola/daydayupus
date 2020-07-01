@@ -25,7 +25,7 @@ class PuzzleIndexPage(Page):
 
 class PuzzlePostPage(Page):
     date = models.DateField('Post date')
-    body = RichTextField(blank=True)
+    body = MarkdownField(blank=True)
     answer = MarkdownField(blank=True)
 
     def main_image(self):
@@ -42,7 +42,7 @@ class PuzzlePostPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('date'),
-        FieldPanel('body', classname='full'),
+        MarkdownPanel('body'),
         MarkdownPanel('answer'),
         InlinePanel('gallery_images', label='Gallery images'),
     ]

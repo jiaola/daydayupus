@@ -26,7 +26,7 @@ Delete the line below if you're just getting started and want to remove the welc
             {% with post.main_image as main_image %}
                 {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
             {% endwith %}
-            {{ post.body|richtext }}
+            {{ post.body|markdown }}
         {% endwith %}
     </div>
     <div><p>&nbsp;</p></div>
@@ -39,7 +39,7 @@ Delete the line below if you're just getting started and want to remove the welc
             {% with post.main_image as main_image %}
                 {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
             {% endwith %}
-            {{ post.answer|richtext }}
+            {{ post.answer|markdown }}
         {% endwith %}
     </div>
 
