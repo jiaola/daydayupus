@@ -21,3 +21,7 @@ main {
 table.wftable tr td {
     border: 1px solid black;
 }
+
+table.wftable th td {
+    border: 1px solid black;
+}
