@@ -18,14 +18,7 @@ main {
     margin: 0 auto;
 }
 
-table.wftable tr td {
-    border: 1px solid black;
-}
-
-table.wftable th td {
-    border: 1px solid black;
-}
-
-table.wftable {
-    border-spacing: 4px 2px;
+.wftable > tr > th, .wftable > tr > td, .wftable > * > tr > th, .wftable > * > tr > td {
+    border: 1px solid #a2a9b1;
+    padding: 0.2em 0.4em;
 }
