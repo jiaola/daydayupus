@@ -17,3 +17,7 @@ main {
     padding: 20px 0;
     margin: 0 auto;
 }
+
+table.wftable tr td {
+    border: 1px solid black;
+}
