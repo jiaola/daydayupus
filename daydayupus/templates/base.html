@@ -16,14 +16,12 @@
         </title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/daydayupus.css' %}">
         <script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -78,5 +76,9 @@
                 <img src="{% google_analytics %}" width="0" height="0" />
             </div>
         {% endif %}
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+
     </body>
 </html>
