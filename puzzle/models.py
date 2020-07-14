@@ -1,6 +1,7 @@
 from django.db import models
 from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.contrib.routable_page.models import route
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
 from wagtail.images.edit_handlers import ImageChooserPanel

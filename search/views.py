@@ -4,6 +4,8 @@ from django.template.response import TemplateResponse
 from wagtail.core.models import Page
 from wagtail.search.models import Query
 
+from puzzle.models import PuzzlePostPage
+
 
 def search(request):
     search_query = request.GET.get('query', None)
@@ -11,7 +13,7 @@ def search(request):
 
     # Search
     if search_query:
-        search_results = Page.objects.live().search(search_query)
+        search_results = PuzzlePostPage.objects.live().search(search_query)
         query = Query.get(search_query)
 
         # Record hit
